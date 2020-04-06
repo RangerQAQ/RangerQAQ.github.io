@@ -6,15 +6,43 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>VMware下CentOS7联网配置 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="VMware下CentOS7联网配置">
+<meta property="og:url" content="http://yoursite.com/2020/04/06/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406152747127.png">
+<meta property="og:image" content="http://yoursite.com/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406153220942.png">
+<meta property="og:image" content="http://yoursite.com/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406153629261.png">
+<meta property="og:image" content="http://yoursite.com/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406153742554.png">
+<meta property="og:image" content="http://yoursite.com/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406154033118.png">
+<meta property="og:image" content="http://yoursite.com/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406154144428.png">
+<meta property="og:image" content="http://yoursite.com/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406154246057.png">
+<meta property="og:image" content="http://yoursite.com/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406154344302.png">
+<meta property="og:image" content="http://yoursite.com/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406154413042.png">
+<meta property="og:image" content="http://yoursite.com/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406154550094.png">
+<meta property="og:image" content="http://yoursite.com/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406154929061.png">
+<meta property="og:image" content="http://yoursite.com/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406155002965.png">
+<meta property="og:image" content="http://yoursite.com/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406155105078.png">
+<meta property="og:image" content="http://yoursite.com/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406155407102.png">
+<meta property="og:image" content="http://yoursite.com/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406155928514.png">
+<meta property="og:image" content="http://yoursite.com/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406160115374.png">
+<meta property="og:image" content="http://yoursite.com/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406160435660.png">
+<meta property="og:image" content="http://yoursite.com/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406160822920.png">
+<meta property="og:image" content="http://yoursite.com/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406160841568.png">
+<meta property="og:image" content="http://yoursite.com/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406161132480.png">
+<meta property="og:image" content="http://yoursite.com/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406161204976.png">
+<meta property="og:image" content="http://yoursite.com/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406161319554.png">
+<meta property="og:image" content="http://yoursite.com/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406161338858.png">
+<meta property="article:published_time" content="2020-04-06T07:04:17.000Z">
+<meta property="article:modified_time" content="2020-04-06T08:14:30.907Z">
 <meta property="article:author" content="RangerQAQ">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="CentOS7">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406152747127.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -156,36 +184,108 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-VMware下CentOS7联网配置" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/06/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2020-04-06T07:04:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-06</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/06/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/">VMware下CentOS7联网配置</a>
+    <h1 class="article-title" itemprop="name">
+      VMware下CentOS7联网配置
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/04/06/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/" class="archive-article-date">
+  	<time datetime="2020-04-06T07:04:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id=""><a href="#" class="headerlink" title=""></a></h2><a id="more"></a>
+
+<h1 id="VMware下CentOS7联网配置"><a href="#VMware下CentOS7联网配置" class="headerlink" title="VMware下CentOS7联网配置"></a>VMware下CentOS7联网配置</h1><p>初次安装CentOS7后发现无法联网，搜索到的解决办法往往比较简略，于是经过我摸索成功后有了如下超详细教程。</p>
+<h2 id="1）VMware配置"><a href="#1）VMware配置" class="headerlink" title="1）VMware配置"></a>1）VMware配置</h2><p>1.首先确定此虚拟机的设置中 <strong>网络适配器</strong> 采用 <strong>NAT模式</strong></p>
+<p><img src="/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406152747127.png" alt="image-20200406152747127"></p>
+<p>2.点击VMware左上角的 <strong>编辑</strong> ，再选择 <strong>虚拟网络编辑器</strong> 。</p>
+<p><img src="/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406153220942.png" alt="image-20200406153220942"></p>
+<p>3.选择 <strong>NET模式</strong> ，点击 <strong>更改设置</strong> ，再选择 <strong>NET模式</strong>，勾选下方两个，并将 <strong>子网IP</strong> 设为 <strong>192.168.52.0</strong> ，<strong>子网掩码</strong> 设为 <strong>255.255.255.0</strong>，最后 <strong>确定</strong> 即可。</p>
+<p><img src="/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406153629261.png" alt="image-20200406153629261"></p>
+<p><img src="/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406153742554.png" alt="image-20200406153742554"></p>
+<h2 id="2）电脑的网络设置"><a href="#2）电脑的网络设置" class="headerlink" title="2）电脑的网络设置"></a>2）电脑的网络设置</h2><p>1.在搜索栏搜索并打开 <strong>网络状态</strong> 。</p>
+<p><img src="/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406154033118.png" alt="image-20200406154033118"></p>
+<p>2.点击 <strong>更改适配器选项</strong> 。</p>
+<p><img src="/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406154144428.png" alt="image-20200406154144428"></p>
+<p>3.双击 <strong>VMnet8</strong> ，点击 <strong>属性</strong> 。</p>
+<p><img src="/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406154246057.png" alt="image-20200406154246057"></p>
+<p><img src="/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406154344302.png" alt="image-20200406154344302"></p>
+<p>4.双击 <strong>Internet 协议版本 4</strong> ，并按下图更改配置。</p>
+<p><img src="/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406154413042.png" alt="image-20200406154413042"></p>
+<p><img src="/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406154550094.png" alt="image-20200406154550094"></p>
+<p>最后点击 <strong>确定</strong> 即可。</p>
+<h2 id="3）CentOS7网卡配置"><a href="#3）CentOS7网卡配置" class="headerlink" title="3）CentOS7网卡配置"></a>3）CentOS7网卡配置</h2><p>1.进行 <strong>root登录</strong> ：点击 <strong>未列出？</strong> ，在 <strong>用户名</strong> 处输入 <strong>root</strong> ，点 <strong>下一步</strong> ，输入密码后点击 <strong>登录</strong> 。</p>
+<p><img src="/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406154929061.png" alt="image-20200406154929061"></p>
+<p><img src="/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406155002965.png" alt="image-20200406155002965"></p>
+<p><img src="/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406155105078.png" alt="image-20200406155105078"></p>
+<p>2.在桌面 <strong>右击</strong> ，选择 <strong>打开终端</strong> 。</p>
+<p><img src="/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406155407102.png" alt="image-20200406155407102"></p>
+<p>3.输入 <strong>ls /etc/sysconfig/network-scripts/</strong> 打开查找网卡名，如图所示：我的是 <strong>ifcfg-ens32</strong> 。</p>
+<p><img src="/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406155928514.png" alt="image-20200406155928514"></p>
+<p>4.再输入 <strong>vim /etc/sysconfig/network-scripts/ifcfg-ens32</strong>  打开它。</p>
+<p><img src="/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406160115374.png" alt="image-20200406160115374"></p>
+<p>5.单击键盘上的 <strong>i</strong> 键，在左下角显示 <strong>插入</strong> 后通过键盘上的 <strong>方向键（有箭头符号的）</strong> 进行移动并按如图框出的进行更改和添加。</p>
+<p><img src="/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406160435660.png" alt="image-20200406160435660"></p>
+<p>6.更改好后先单击 <strong>ESC</strong> 键退出编辑，再同时按住 <strong>Shift</strong> 和 <strong>;:</strong> 键 ，待左下角出现冒号后输入 <strong>wq</strong> ，最后回车即可。</p>
+<p><img src="/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406160822920.png" alt="image-20200406160822920"></p>
+<p><img src="/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406160841568.png" alt="image-20200406160841568"></p>
+<p>7.输入 <strong>service network restart</strong> 重启网卡。</p>
+<p><img src="/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406161132480.png" alt="image-20200406161132480"></p>
+<p><img src="/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406161204976.png" alt="image-20200406161204976"></p>
+<p>8.最后输入 <strong>ping <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a></strong> 进行测试。</p>
+<p><img src="/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406161319554.png" alt="image-20200406161319554"></p>
+<p><img src="/images/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/image-20200406161338858.png" alt="image-20200406161338858"></p>
+<p>成功！</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -201,7 +301,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -214,123 +314,117 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://rangerqaq.github.io/2020/04/06/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/05/VMware%E4%B8%8B%E5%AE%89%E8%A3%85CentOS7%E6%95%99%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2020-04-05T02:39:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-05</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/05/VMware%E4%B8%8B%E5%AE%89%E8%A3%85CentOS7%E6%95%99%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">VMware下安装CentOS7教程</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/05/VMware%E4%B8%8B%E5%AE%89%E8%A3%85CentOS7%E6%95%99%E7%A8%8B/">VMware下安装CentOS7教程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CentOS7</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/软件//" class="article-tag-list-link color3">软件</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/软件/Linux//" class="article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text"></span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#VMware下CentOS7联网配置"><span class="toc-number"></span> <span class="toc-text">VMware下CentOS7联网配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1）VMware配置"><span class="toc-number">1.</span> <span class="toc-text">1）VMware配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2）电脑的网络设置"><span class="toc-number">2.</span> <span class="toc-text">2）电脑的网络设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3）CentOS7网卡配置"><span class="toc-number">3.</span> <span class="toc-text">3）CentOS7网卡配置</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/08/%E3%80%90IntelliJ-IDEA2019-2-4%E3%80%91%E7%A0%B4%E8%A7%A3%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-03-08T13:24:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/08/%E3%80%90IntelliJ-IDEA2019-2-4%E3%80%91%E7%A0%B4%E8%A7%A3%E6%96%B9%E6%B3%95/">【IntelliJ IDEA2019.2.4】破解方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">IDEA</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/软件//" class="article-tag-list-link color3">软件</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -357,8 +451,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
