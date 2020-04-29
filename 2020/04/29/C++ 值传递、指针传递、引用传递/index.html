@@ -6,14 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/3 | Hexo</title>
+  <title>C++ 值传递、指针传递、引用传递 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2020/03/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="C++ 值传递、指针传递、引用传递">
+<meta property="og:url" content="http://yoursite.com/2020/04/29/C++%20%E5%80%BC%E4%BC%A0%E9%80%92%E3%80%81%E6%8C%87%E9%92%88%E4%BC%A0%E9%80%92%E3%80%81%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-29T06:48:17.000Z">
+<meta property="article:modified_time" content="2020-04-29T15:20:46.300Z">
 <meta property="article:author" content="RangerQAQ">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -156,71 +159,223 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-C++ 值传递、指针传递、引用传递" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/08/%E3%80%90IntelliJ-IDEA2019-2-4%E3%80%91%E7%A0%B4%E8%A7%A3%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-03-08T13:24:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/08/%E3%80%90IntelliJ-IDEA2019-2-4%E3%80%91%E7%A0%B4%E8%A7%A3%E6%96%B9%E6%B3%95/">【IntelliJ IDEA2019.2.4】破解方法</a>
+    <h1 class="article-title" itemprop="name">
+      C++ 值传递、指针传递、引用传递
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/04/29/C++%20%E5%80%BC%E4%BC%A0%E9%80%92%E3%80%81%E6%8C%87%E9%92%88%E4%BC%A0%E9%80%92%E3%80%81%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92/" class="archive-article-date">
+  	<time datetime="2020-04-29T06:48:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id=""><a href="#" class="headerlink" title=""></a></h2><a id="more"></a>
+
+<p>#C++ 值传递、指针传递、引用传递</p>
+<p>最近在学习数据结构中遇到一些困惑,于是参考一些博文后来区分一下函数参数传递的三种方法:值传递、指针传递、引用传递.</p>
+<h2 id="一、值传递"><a href="#一、值传递" class="headerlink" title="一、值传递"></a>一、值传递</h2><p>代码如下:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">transfer_value</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    n++;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;n&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>调用函数时只是把实参的值传递给形参n,故函数内对n的操作对实参毫无影响。</p>
+<h2 id="二、指针传递"><a href="#二、指针传递" class="headerlink" title="二、指针传递"></a>二、指针传递</h2><p>指针传递即把实参的地址值传递给形参（本质仍是值传递），调用函数时在栈内开辟一个空间，作为函数的局部变量来存放形参（相当于一个实参的复制体），因此形参和实参是两个不同的指针，只是指向的对象相同。而函数内对形参的操作不会对实参变量产生影响（指不改变实参变量的地址值），仅可以改变实参（形参）所指向的对象的值。</p>
+<h2 id="三、引用传递"><a href="#三、引用传递" class="headerlink" title="三、引用传递"></a>三、引用传递</h2><p>引用传递是把实参的地址放到了调用函数时在栈内开辟的内存空间中，因此函数对形参的操作，就以间接寻址的处理方式，也就是通过栈中存放的地址访问主调函数中的实参变量，来直接影响实参变量，可以直接改变实参变量的值（指地址值），即实参和形参实际上是同一个变量。</p>
+<h3 id="下面用建立单链表的一些函数操作来说明-指针传递-和-引用传递-的区别"><a href="#下面用建立单链表的一些函数操作来说明-指针传递-和-引用传递-的区别" class="headerlink" title="下面用建立单链表的一些函数操作来说明 指针传递 和 引用传递 的区别"></a>下面用建立单链表的一些函数操作来说明 指针传递 和 引用传递 的区别</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span> DataType;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	DataType data;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">next</span>;</span></span><br><span class="line">&#125;node;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitList</span><span class="params">(node*&amp; L)</span><span class="comment">//初始化单链表    （引用传递）</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	L = <span class="keyword">new</span> node;<span class="comment">//生成新节点作为头节点，头指针L指向头节点</span></span><br><span class="line">	L-&gt;next = <span class="literal">NULL</span>;<span class="comment">//头指针所指向的头结点的指针域置空</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InsertList</span><span class="params">(node* L, <span class="keyword">int</span> pos, DataType item)</span><span class="comment">//在单链表指定位置插入元素 （指针传递）</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	node* P = L-&gt;next;               <span class="comment">//头插法！！！</span></span><br><span class="line">	node* temp = <span class="keyword">new</span> node;</span><br><span class="line">	temp-&gt;data = item;</span><br><span class="line">	<span class="keyword">if</span> (pos &lt;= <span class="number">0</span> || pos &gt; LengthList(L) + <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"插入位置无效"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (pos == <span class="number">1</span>) &#123;</span><br><span class="line">		temp-&gt;next = P;</span><br><span class="line">		L-&gt;next = temp;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; pos - <span class="number">1</span>; i++) &#123;</span><br><span class="line">			P = P-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">		temp-&gt;next = P-&gt;next;</span><br><span class="line">		P-&gt;next = temp;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    node* head;</span><br><span class="line">    InitList(head);</span><br><span class="line">    InsertList(head, <span class="number">1</span>, <span class="string">'h'</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>void InitList(node *&amp; L)</strong> 是对单链表的初始化和清空，因此要对实参变量head本身进行操作, 故采用 <strong>引用传递</strong>。</p>
+<p><strong>node*</strong> 表示调用的形参是node型指针,而*<em>&amp; *</em>即取地址符表明调用了实参</p>
+<p>*<em>InitList(head) *</em> 即直接传入了实参 head的地址</p>
+<p>其中 <strong>L = new node</strong> 就是给 head这个头指针分配一个头节点来指向</p>
+<p>若采用 <strong>指针传递</strong> ，则产生的形参 L和实参 head是两个不同的指针,函数对栈中开辟的局部变量 L（形参）的</p>
+<p>操作，会改变形参 L，无法为实参 head分配头节点，故错误。</p>
+<p>—————————————————————————————————————————————————</p>
+<p><em>*void InsertList(node</em> L, int pos, DataType item) ** 是在单链表指定位置插入元素，对头指针 L本身不会改变，</p>
+<p>故可采用 <strong>指针传递</strong> </p>
+<p>*<em>InsertList(head, 1, ‘h’) *</em> 就是将实参 head的地址值传递给它的一个复制体（形参 L），而初始化后实参和形参（实参复制体）是都指向头节点的两个不同指针，故可以进行插入新结点（把数据域为 h 的节点作为新的首元节点来使头节点的指针域所指向，）的函数操作，不改变实参 head这个头指针。</p>
+<p>但也可采用 <strong>引用传递</strong> ，那么函数操作 <strong>L-&gt;next = temp</strong> 是改变实参 head指向的头节点的指针域指向的首元节点</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">IDEA</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/软件//" class="article-tag-list-link color3">软件</a>
+        			<a href="/categories/C//" class="article-tag-list-link color4">C++</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://rangerqaq.github.io/2020/04/29/C++%20%E5%80%BC%E4%BC%A0%E9%80%92%E3%80%81%E6%8C%87%E9%92%88%E4%BC%A0%E9%80%92%E3%80%81%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/04/06/VMware%E4%B8%8BCentOS7%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">VMware下CentOS7联网配置</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、值传递"><span class="toc-number">2.</span> <span class="toc-text">一、值传递</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、指针传递"><span class="toc-number">3.</span> <span class="toc-text">二、指针传递</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、引用传递"><span class="toc-number">4.</span> <span class="toc-text">三、引用传递</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#下面用建立单链表的一些函数操作来说明-指针传递-和-引用传递-的区别"><span class="toc-number">4.1.</span> <span class="toc-text">下面用建立单链表的一些函数操作来说明 指针传递 和 引用传递 的区别</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -247,8 +402,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
